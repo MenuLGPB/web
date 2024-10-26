@@ -1,0 +1,547 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    flex-grow: 1;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #e43e3e;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.navbar .open-menu {
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Ajustes para el logo */
+.logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+}
+
+/* Estilos del menú lateral */
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+}
+
+.logo-sidebar {
+    text-align: center;
+    padding-bottom: 10px;
+    background-color: #e43e3e;
+    padding: 20px;
+}
+
+.logo-sidebar-img {
+    width: 150px;
+}
+
+.links-title {
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    padding: 10px 0;
+    border-bottom: 1px solid #e94c4c;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    display: block;
+    transition: 0.3s;
+    border-bottom: 2px solid #e94c4c;
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+}
+
+.content {
+    transition: margin-left 0.5s;
+    padding: 16px;
+}
+
+/* Sección de Enlaces */
+.menu-links {
+    display: flex;
+    width: 100%; /* Cambiado de 100vw a 100% */
+    justify-content: center;
+    background-color: #e94c4c;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    height: 50px;
+}
+
+.menu-button {
+    flex: 1;
+    text-align: center;
+    color: white;
+    padding: 0.7rem 0;
+    font-size: 1.2rem;
+    background-color: #e94c4c;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.menu-button + .menu-button {
+    border-left: 2px solid white;
+}
+
+.menu-button:hover {
+    background-color: #d33d3d;
+}
+
+/* ---------- ESTILOS PARA MODAL DE CONTACTO ---------- */
+
+.modal-contact {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content-contact {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+}
+
+.icon-row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.icon-circle {
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-circle img {
+    width: 30px;
+    height: 30px;
+}
+
+.hidden-icons {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 15px;
+}
+
+.expand-toggle {
+    cursor: pointer;
+}
+
+/* Estilo para el símbolo de expansión */
+.expand-toggle {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+#toggleArrow {
+    transform: rotate(90deg);  /* Cerrado */
+}
+
+#contactIcons.show + #toggleArrow {
+    transform: rotate(180deg); /* Abierto */
+}
+/* ---------- ESTILOS PARA MODAL DE RECOMENDADOS ---------- */
+.modal-recomendados {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+   background-color: rgba(0, 0, 0, 0.85);  /* Fondo negro semitransparente */
+}
+
+.modal-content-recomendados {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    display: block;
+}
+.menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white; /* Para que el menú sea visible sobre el fondo */
+    width: 100%;
+    margin: 0px;
+    top: 0px;
+    position: -webkit-sticky; /* Soporte para Safari */
+    position: sticky;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    padding: 0px;
+}
+
+.back-button-recomendados {
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black; /* Flecha en color negro */
+}
+.menu-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Las columnas se ajustarán automáticamente */
+    justify-content: center; /* Centra las columnas dentro del contenedor */
+    gap: 10px; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 10px; /* Espacio adicional alrededor del contenedor */
+}
+
+
+/* Estilos del menú desplazable */
+.scrollable-menu {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white; /* Fondo blanco */
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu-container {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-item {
+    color: black;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.menu-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* Línea negra bajo el activo */
+}
+
+.menu-item:hover {
+    color: black;
+}
+
+.scrollable-menu::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo general para las tarjetas */ 
+.card {
+    flex: 1 1 calc(23% - 20px); /* 23% del ancho para que quepan 4 tarjetas */
+    max-width: 220px; /* Reduce el ancho máximo de las tarjetas */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px; /* Margen entre las tarjetas */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 10px; /* Padding dentro de las tarjetas */
+}
+
+.card-title {
+    font-size: 14px; /* Tamaño de la fuente del título */
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.card-description {
+    font-size: 12px; /* Tamaño de la fuente de la descripción */
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 14px; /* Tamaño de la fuente del precio */
+    font-weight: bold;
+    color: #e63946;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto hover */
+}
+
+/* Contenedor de las tarjetas con flexbox */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Asegura que las columnas se distribuyan */
+    gap: 10px; /* Espacio entre las tarjetas */
+}
+
+/* Estilo para la sección de títulos */
+.titulo {
+    margin: 30px 0; /* Margen superior e inferior de la sección */
+    font-size: 50px; /* Tamaño del título de las secciones */
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+
+
+
+/* ---------- NUEVO MODAL DE DETALLE ---------- */
+.modal-detalle {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Fondo oscuro */
+}
+
+.modal-content-detalle {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+}
+
+.modal-content-detalle img {
+    width: 70%; /* Cambiar a un 70% del ancho disponible */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.modal-price {
+    font-size: 1.5rem;
+    color: #e43e3e;
+    font-weight: bold;
+}
+
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+}
+
+/* Menú desplazable horizontal principal */
+.menu-principal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white; /* Para que el menú sea visible sobre el fondo */
+    width: 100%;
+    margin: 0px;
+    top: 0px;
+    position: -webkit-sticky; /* Soporte para Safari */
+    position: sticky;
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
+    padding: 0px;
+}
+
+
+.scrollable-main {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    background-color: white; /* Fondo blanco */
+    padding: 10px;
+    z-index: 1000;
+}
+
+.menu-container2 {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-section-principal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Las columnas se ajustarán automáticamente */
+    justify-content: center; /* Centra las columnas dentro del contenedor */
+    gap: 10px; /* Espacio entre las tarjetas */
+    max-width: 1200px; /* Limita el ancho máximo */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 10px; /* Espacio adicional alrededor del contenedor */
+}
+
+/* Estilo para cada ítem del menú */
+.menu-item2{
+    color: black;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: transparent;
+    position: relative;
+}
+
+
+.menu-item2.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black; /* Línea negra bajo el ítem activo */
+}
+
+
+.menuprincipal:hover {
+    color: black;
+}
+.scrollable-main::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- Evitar que el menú se superponga a los modales --- */
+.modal-recomendados, .modal-contact {
+    z-index: 1000; /* Los modales tienen un z-index más alto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo semitransparente */
+}
+
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px; /* Reducir el padding para que ocupe menos espacio */
+    background-color: #e43e3e;
+    color: white;
+    width: 100%;
+    position: auto; /* Mantener relative para no afectar otros elementos */
+    bottom: 0;
+    left: 0;
+    height: auto; /* Asegurar que el footer no tenga un alto fijo */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
