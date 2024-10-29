@@ -23,6 +23,7 @@
 
     <!-- Menú lateral -->
     <div id="sidebar" class="sidebar">
+        <button class="close-btn" onclick="closeNav(event)">×</button>
         <div class="logo-sidebar">
             <img src="imagenes/logo.png" alt="logo" class="logo-sidebar-img">
         </div>
@@ -217,7 +218,7 @@
                 <button class="back-button-recomendados" onclick="closeRecomendados()">&#x2039;</button>
                 <div class="scrollable-menu">
                     <ul class="menu-container">
-                        <li><a href="#recomendados" class="menu-item active">Nuestros recomedados</a></li>
+                        <li><a href="#recomendados" class="menu-item active">Los Recomedados</a></li>
                     </ul>
                 </div>
             </div>
@@ -385,7 +386,6 @@
         function openNav(event) {
             event.stopPropagation(); 
             document.getElementById("sidebar").style.width = "250px";
-            document.querySelector('.content').style.marginLeft = "250px";
             document.addEventListener('click', closeMenuOnClickOutside);
         }
         
