@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #EF5350;
 }
 
 h1, h2, h3, h4 {
@@ -300,7 +300,7 @@ a {
 }
 
 .modal-content-recomendados {
-    background-color: white;
+    background-color: #EF5350;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -455,7 +455,7 @@ a {
     font-size: 35px; /* Tamaño del título en pantallas grandes */
     font-weight: bold;
     text-align: center;
-    color: #333;
+    color: #000000;
     margin-bottom: 20px; /* Espacio debajo del título */
 }
 
@@ -492,27 +492,42 @@ a {
 .modal-content-detalle {
     background-color: white;
     margin: 10% auto;
-    padding: 20px;
+    padding: 0px;
     border-radius: 10px;
     width: 90%;
     max-width: 400px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
     position: relative;
+    overflow: hidden; /* Asegura que los bordes redondeados no se desborden */
+    
 }
 
 .modal-content-detalle img {
-    width: 70%; /* Cambiar a un 70% del ancho disponible */
+    width: 100%; /* Cambiar a un 70% del ancho disponible */
     height: auto;
-    margin-bottom: 20px;
+    display: block;
+}
+#modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 15px 0 10px; /* Espaciado superior e inferior */
+    color: #000000;
 }
 
-.modal-price {
+#modal-description {
+    font-size: 1rem;
+    color: #666;
+    margin: 0 20px 15px; /* Espaciado para el texto */
+    line-height: 1.5;
+}
+
+#modal-price {
     font-size: 1.5rem;
     color: #e43e3e;
     font-weight: bold;
+    margin: 10px 0 20px; /* Espaciado para separar del resto */
 }
-
 
 .close {
     position: absolute;
@@ -520,13 +535,13 @@ a {
     right: 10px;
     font-size: 25px;
     font-weight: bold;
-    color: #aaa;
+    color: #00ff40;
     cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: rgb(255, 0, 0);
 }
 
 /* Menú desplazable horizontal principal */
@@ -545,32 +560,9 @@ a {
 }
 
 
-.scrollable-main {
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    display: flex;
-    justify-content: flex-start;
-    background-color: white; /* Fondo blanco */
-    padding: 10px;
-    z-index: 1000;
-}
 
-.menu-container2 {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-.menu-section-principal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Las columnas se ajustarán automáticamente */
-    justify-content: center; /* Centra las columnas dentro del contenedor */
-    gap: 10px; /* Espacio entre las tarjetas */
-    max-width: 1200px; /* Limita el ancho máximo */
-    margin: 0 auto; /* Centra el contenedor horizontalmente */
-    padding: 10px; /* Espacio adicional alrededor del contenedor */
-}
+
+
 
 /* Estilo para cada ítem del menú */
 .menu-item2{
